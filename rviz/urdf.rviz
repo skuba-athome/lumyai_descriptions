@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /RobotModel1/Status1
       Splitter Ratio: 0.697987
     Tree Height: 463
   - Class: rviz/Selection
@@ -171,6 +170,88 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        laser_Link:
+          Value: true
+        left_elbow_Link:
+          Value: true
+        left_gripper_Link:
+          Value: true
+        left_gripper_fixed_Link:
+          Value: true
+        left_shoulder_1_Link:
+          Value: true
+        left_shoulder_2_Link:
+          Value: true
+        left_wrist_1_Link:
+          Value: true
+        left_wrist_2_Link:
+          Value: true
+        left_wrist_3_Link:
+          Value: true
+        pan_Link:
+          Value: true
+        right_elbow_Link:
+          Value: true
+        right_gripper_Link:
+          Value: true
+        right_gripper_fixed_Link:
+          Value: true
+        right_shoulder_1_Link:
+          Value: true
+        right_shoulder_2_Link:
+          Value: true
+        right_wrist_1_Link:
+          Value: true
+        right_wrist_2_Link:
+          Value: true
+        right_wrist_3_Link:
+          Value: true
+        tilt_Link:
+          Value: true
+        torso_Link:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base_link:
+          laser_Link:
+            {}
+          torso_Link:
+            left_shoulder_1_Link:
+              left_shoulder_2_Link:
+                left_elbow_Link:
+                  left_wrist_1_Link:
+                    left_wrist_2_Link:
+                      left_wrist_3_Link:
+                        left_gripper_Link:
+                          {}
+                        left_gripper_fixed_Link:
+                          {}
+            pan_Link:
+              tilt_Link:
+                {}
+            right_shoulder_1_Link:
+              right_shoulder_2_Link:
+                right_elbow_Link:
+                  right_wrist_1_Link:
+                    right_wrist_2_Link:
+                      right_wrist_3_Link:
+                        right_gripper_Link:
+                          {}
+                        right_gripper_fixed_Link:
+                          {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -195,7 +276,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 2.15671
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -207,10 +288,10 @@ Visualization Manager:
         Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.785398
+      Pitch: 0.465399
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.785398
+      Yaw: 5.95859
     Saved: ~
 Window Geometry:
   Displays:
@@ -228,5 +309,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1309
-  X: 57
+  X: 50
   Y: 24
