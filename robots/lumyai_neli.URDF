@@ -170,11 +170,12 @@
     </collision>
   </link>
 
-  <joint name="right_shoulder_1_joint" type="continuous">
+  <joint name="right_shoulder_1_joint" type="revolute">
     <origin xyz="-0.025 -0.0828 0.485" rpy="5.9764E-17 1.2246E-16 1.0433E-16" />
     <parent link="torso_Link" />
     <child link="right_shoulder_1_Link" />
     <axis xyz="0 1 0" />
+    <limit lower="0" upper="2.35525" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_shoulder_2_Link">
@@ -242,12 +243,12 @@
     </collision>
   </link>
 
-  <joint name="right_elbow_joint" type="continuous">
+  <joint name="right_elbow_joint" type="revolute">
     <origin xyz="0.278 0 0" rpy="-1.6008E-15 -1.2246E-16 1.6653E-16" />
     <parent link="right_shoulder_2_Link" />
-
     <child link="right_elbow_Link" />
     <axis xyz="0 1 0" />
+    <limit lower="-1.6" upper="0" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_1_Link">
