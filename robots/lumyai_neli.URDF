@@ -1,0 +1,753 @@
+<robot name="lumyai_neli">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.000356537786255296 -6.6249418627309E-17 0.0997888259449414" rpy="0 0 0" />
+      <mass value="22.8330889899799" />
+      <inertia
+        ixx="0.393056901892828"
+        ixy="1.36347370720269E-09"
+        ixz="0.00281217969636561"
+        iyy="0.655262329988686"
+        iyz="-5.72458747072346E-17"
+        izz="0.93344221495804" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_descriptions/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="torso_Link">
+    <inertial>
+      <origin xyz="-0.0178492334695928 1.64680041842964E-05 0.42269777566101" rpy="0 0 0" />
+      <mass value="2.69155190066383" />
+      <inertia
+        ixx="0.0469156503531629"
+        ixy="-3.16954065000709E-07"
+        ixz="0.00288774459410475"
+        iyy="0.0450852039355934"
+        iyz="2.76151419280066E-06"
+        izz="0.00687526558226967" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" /> 
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/ballscrew_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/ballscrew_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="torso_joint" type="prismatic">
+    <origin xyz="0.075 0 0.5342" rpy="-1.2246E-16 -1.2246E-16 -4.1633E-17" />
+    <parent link="base_link" />
+    <child link="torso_Link" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link name="pan_Link">
+    <inertial>
+      <origin xyz="0 -0.00119126756458552 0.0134576748385669" rpy="0 0 0" />
+      <mass value="0.0300690193079437" />
+      <inertia
+        ixx="0.000168368080790157"
+        ixy="-4.80909958181406E-20"
+        ixz="2.08466738613088E-20"
+        iyy="1.73305613094932E-05"
+        iyz="-1.64585540351021E-06"
+        izz="0.000163586382566563" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_descriptions/meshes/headservo1_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/headservo1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pan_joint" type="continuous">
+    <origin xyz="0.0094995 0 0.6335" rpy="1.2246E-16 1.2246E-16 4.1633E-17" />
+    <parent link="torso_Link" />
+    <child link="pan_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <link name="tilt_Link">
+    <inertial>
+      <origin xyz="-8.44827095813905E-06 -0.0945031871194096 0.0320993885960499" rpy="0 0 0" />
+      <mass value="0.833552168165174" />
+      <inertia
+        ixx="0.00381358557342371"
+        ixy="4.54342919190634E-07"
+        ixz="5.86564764065693E-06"
+        iyy="0.000826427287752361"
+        iyz="6.59205925913574E-08"
+        izz="0.00358378305616896" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/headservo2_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/headservo2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="tilt_joint"type="continuous">
+    <origin xyz="0 0.0945 0.054" rpy="3.6679E-16 3.5863E-33 -9.7775E-18" />
+    <parent link="pan_Link" />
+    <child link="tilt_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <link name="right_shoulder_1_Link">
+    <inertial>
+      <origin xyz="0.0239992426752438 -0.0583974811506786 -2.22044604925031E-16" rpy="0 0 0" />
+      <mass value="0.489568995899366" />
+      <inertia
+        ixx="0.000553543383353331"
+        ixy="-7.80079861482034E-05"
+        ixz="-4.05688775683426E-21"
+        iyy="0.000428515747682648"
+        iyz="1.66006146644331E-21"
+        izz="0.00072378100401638" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/shoulder_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/shoulder_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_shoulder_1_joint" type="continuous">
+    <origin xyz="-0.025 -0.0828 0.485" rpy="5.9764E-17 1.2246E-16 1.0433E-16" />
+    <parent link="torso_Link" />
+    <child link="right_shoulder_1_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <link name="right_shoulder_2_Link">
+    <inertial>
+      <origin xyz="0.159020988900685 -2.77555756156289E-17 0" rpy="0 0 0" />
+      <mass value="0.232391134105839" />
+      <inertia
+        ixx="5.22472538303865E-05"
+        ixy="2.52122559280678E-21"
+        ixz="-8.71898229208082E-21"
+        iyy="0.00180130279668001"
+        iyz="1.4475660719678E-21"
+        izz="0.00182056733175636" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/upper-arm_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/upper-arm_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_shoulder_2_joint" type="continuous">
+    <origin xyz="0.065 -0.08952 0" rpy="6.2701E-17 4.9423E-62 -6.2701E-17" />
+    <parent link="right_shoulder_1_Link" />
+    <child link="right_shoulder_2_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+  <link name="right_elbow_Link">
+    <inertial>
+      <origin xyz="0.122051716562919 0.000820658493516618 3.52135320902391E-09" rpy="0 0 0" />
+      <mass value="0.166643682967829" />
+      <inertia
+        ixx="2.28800565451064E-05"
+        ixy="1.49492951235107E-05"
+        ixz="-7.46478394424626E-11"
+        iyy="0.000791317297927464"
+        iyz="1.51818886507853E-11"
+        izz="0.000794899254775122" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/lower-arm_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/lower-arm_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="right_elbow_joint" type="continuous">
+    <origin xyz="0.278 0 0" rpy="-1.6008E-15 -1.2246E-16 1.6653E-16" />
+    <parent link="right_shoulder_2_Link" />
+    <child link="right_elbow_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  
+  <link name="right_wrist_1_Link">
+    <inertial>
+      <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
+      <mass value="0.0149816280592893" />
+      <inertia
+        ixx="8.84904578599191E-06"
+        ixy="1.39288755525688E-21"
+        ixz="-7.83981016076421E-21"
+        iyy="2.76435935614456E-06"
+        iyz="1.51089708761639E-20"
+        izz="9.50204738188144E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo1_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo1_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="right_wrist_1_joint" type="continuous">
+    <origin xyz="0.23436 0.03 0" rpy="1.6008E-15 1.309E-29 -1.6653E-16" />
+    <parent link="right_elbow_Link" />
+    <child link="right_wrist_1_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <link name="right_wrist_2_Link">
+    <inertial>
+      <origin xyz="0.00847810994802878 0.0269999999999982 -2.22044604925031E-16" rpy="0 0 0" />
+      <mass value="0.0641453083227973" />
+      <inertia
+        ixx="1.6788504342063E-05"
+        ixy="-5.9756481874188E-21"
+        ixz="2.8228579612599E-20"
+        iyy="1.55686991248703E-05"
+        iyz="-1.8560778850074E-20"
+        izz="2.33222127439071E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo2_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo2_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_2_joint"
+    type="continuous">
+    <origin xyz="0.0267 -0.027 0" rpy="-3.7954E-16 3.5006E-30 -4.9485E-16" />
+    <parent link="right_wrist_1_Link" />
+    <child link="right_wrist_2_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  
+  <link name="right_wrist_3_Link">
+    <inertial>
+      <origin xyz="0.0186417965193608 2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
+      <mass value="0.0557526551260179" />
+      <inertia
+        ixx="2.4548698493395E-05"
+        ixy="2.6975485784349E-20"
+        ixz="7.63449804477851E-21"
+        iyy="1.63711040865245E-05"
+        iyz="-3.35687188123858E-20"
+        izz="2.5441649760699E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo3_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo3_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="right_wrist_3_joint" type="continuous">
+    <origin xyz="0.0335 0.027 0" rpy="4.647E-17 1.2011E-16 7.3949E-16" />
+    <parent link="right_wrist_2_Link" />
+    <child link="right_wrist_3_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <link name="right_gripper_Link">
+    <inertial>
+      <origin xyz="0.0428340981345857 0.0302658123758087 -0.004" rpy="0 0 0" />
+      <mass value="0.0226554217932752" />
+      <inertia
+        ixx="8.71789031389235E-06"
+        ixy="1.34146946089381E-05"
+        ixz="-3.80735898836956E-21"
+        iyy="3.40521913817587E-05"
+        iyz="-4.34086618922952E-22"
+        izz="4.25284238631894E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo4_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo4_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_joint" type="continuous">
+    <origin xyz="0.02 0.015 0.004" rpy="5.7683E-34 0 0" />
+    <parent link="right_wrist_3_Link" />
+    <child link="right_gripper_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  
+  <link name="right_gripper_fixed_Link">
+    <inertial>
+      <origin xyz="0.0434341825098 -0.0593981487763494 -0.004" rpy="0 0 0" />
+      <mass value="0.0226554217932752" />
+      <inertia
+        ixx="8.18861723555839E-06"
+        ixy="-1.28943839692323E-05"
+        ixz="9.95342015448899E-23"
+        iyy="3.45814644600927E-05"
+        iyz="9.54654734742236E-22"
+        izz="4.25284238631894E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper_fix_R_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper_fix_R_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="right_gripper_fixed_joint" type="fixed">
+    <origin xyz="0.02 0.015 0.004" rpy="5.7683E-34 0 0" />
+    <parent link="right_wrist_3_Link" />
+    <child link="right_gripper_fixed_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  
+  <link name="left_shoulder_1_Link">
+    <inertial>
+      <origin xyz="0.0239992426752437 0.0583974811506782 -2.22044604925031E-16" rpy="0 0 0" />
+      <mass value="0.489568995899366" />
+      <inertia
+        ixx="0.000553543383353331"
+        ixy="7.80079861482035E-05"
+        ixz="2.26833743933908E-21"
+        iyy="0.000428515747682648"
+        iyz="-2.19460453042143E-20"
+        izz="0.00072378100401638" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/shoulder_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/shoulder_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_shoulder_1_joint" type="continuous">
+    <origin xyz="-0.025 0.0858 0.485" rpy="5.593E-17 3.6739E-16 -8.1621E-17" />
+    <parent link="torso_Link" />
+    <child link="left_shoulder_1_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  
+  <link name="left_shoulder_2_Link">
+    <inertial>
+      <origin xyz="0.159020988900685 0 0" rpy="0 0 0" />
+      <mass value="0.232391134105839" />
+      <inertia
+        ixx="5.22472538303864E-05"
+        ixy="9.395660615452E-21"
+        ixz="1.06521417891698E-20"
+        iyy="0.00180130279668"
+        iyz="3.92910790962688E-21"
+        izz="0.00182056733175636" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/upper-arm_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/upper-arm_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_shoulder_2_joint" type="continuous">
+    <origin xyz="0.065 0.08952 0" rpy="6.6534E-17 -2.4493E-16 1.2325E-16" />
+    <parent link="left_shoulder_1_Link" />
+    <child link="left_shoulder_2_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <link name="left_elbow_Link">
+    <inertial>
+      <origin xyz="0.122051716562903 -0.000820658493535464 -3.52135476333615E-09" rpy="0 0 0" />
+      <mass value="0.166643682967829" />
+      <inertia
+        ixx="2.28800565451064E-05"
+        ixy="-1.49492951235107E-05"
+        ixz="7.46478391399886E-11"
+        iyy="0.000791317297927464"
+        iyz="1.51818886586902E-11"
+        izz="0.000794899254775122" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/lower-arm_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/lower-arm_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_elbow_joint" type="continuous">
+    <origin xyz="0.278 0 0" rpy="1.3878E-16 -1.1102E-16 0" />
+    <parent link="left_shoulder_2_Link" />
+    <child link="left_elbow_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  
+  <link name="left_wrist_1_Link">
+    <inertial>
+      <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
+      <mass value="0.0149816280592893" />
+      <inertia
+        ixx="8.84904578599191E-06"
+        ixy="-1.00486934894722E-21"
+        ixz="6.96327167775905E-21"
+        iyy="2.76435935614456E-06"
+        iyz="1.64963773210181E-20"
+        izz="9.50204738188144E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo1_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo1_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_wrist_1_joint" type="continuous">
+    <origin xyz="0.23436 -0.03 0" rpy="-2.7756E-16 2.4652E-32 -2.3111E-32" />
+    <parent link="left_elbow_Link" />
+    <child link="left_wrist_1_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <link name="left_wrist_2_Link">
+    <inertial>
+      <origin xyz="0.0084781099480139 -0.0270000000000558 -6.66133814775094E-16" rpy="0 0 0" />
+      <mass value="0.0641453083227973" />
+      <inertia
+        ixx="1.6788504342063E-05"
+        ixy="5.94543201326671E-21"
+        ixz="-2.79220055887874E-20"
+        iyy="1.55686991248703E-05"
+        iyz="1.29266875569695E-20"
+        izz="2.33222127439071E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo2_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo2_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_wrist_2_joint" type="continuous">
+    <origin xyz="0.0267 0.027 0" rpy="-2.6732E-32 2.2204E-16 2.0331E-16" />
+    <parent link="left_wrist_1_Link" />
+    <child link="left_wrist_2_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  
+  <link name="left_wrist_3_Link">
+    <inertial>
+      <origin xyz="0.0186417965193607 -2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
+      <mass value="0.0557526551260178" />
+      <inertia
+        ixx="2.4548698493395E-05"
+        ixy="1.37246533420391E-20"
+        ixz="1.27838300237793E-20"
+        iyy="1.63711040865245E-05"
+        iyz="3.67570943397618E-21"
+        izz="2.5441649760699E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo3_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo3_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_wrist_3_joint" type="continuous">
+    <origin xyz="0.0335 -0.027 0" rpy="1.5648E-31 1.2246E-16 6.0767E-16" />
+    <parent link="left_wrist_2_Link" />
+    <child link="left_wrist_3_Link" />
+    <axis xyz="1 0 0" />
+  </joint>
+  
+  <link name="left_gripper_Link">
+    <inertial>
+      <origin xyz="0.043136321949884 -0.0598334894105086 -0.004" rpy="0 0 0" />
+      <mass value="0.0226554217932752" />
+      <inertia
+        ixx="8.45063720118698E-06"
+        ixy="-1.31572009335656E-05"
+        ixz="9.63247978916627E-21"
+        iyy="3.4319444494464E-05"
+        iyz="-3.54121329634229E-21"
+        izz="4.25284238631894E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo4_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper-servo4_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_gripper_joint" type="continuous">
+    <origin xyz="0.02 0.015 0.004" rpy="7.8612E-33 0 0" />
+    <parent link="left_wrist_3_Link" />
+    <child link="left_gripper_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  
+  <link name="left_gripper_fixed_Link">
+    <inertial>
+      <origin xyz="0.0431363219499079 0.0298334894104741 -0.004" rpy="0 0 0" />
+      <mass value="0.0226554217932752" />
+      <inertia
+        ixx="8.45063720116595E-06"
+        ixy="1.3157200933545E-05"
+        ixz="8.5951996959197E-21"
+        iyy="3.43194444944851E-05"
+        iyz="3.41059496023486E-21"
+        izz="4.25284238631894E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper_fix_L_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/gripper_fix_L_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="left_gripper_fixed_joint" type="fixed">
+    <origin xyz="0.02 0.015 0.004" rpy="7.8612E-33 0 0" />
+    <parent link="left_wrist_3_Link" />
+    <child link="left_gripper_fixed_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+  
+  <link name="laser_Link">
+    <inertial>
+      <origin xyz="-0.000643832581142478 9.32775516960576E-10 0.0378322387460577" rpy="0 0 0" />
+      <mass value="0.229160254925421" />
+      <inertia
+        ixx="0.000208944146839268"
+        ixy="-1.03293676040432E-12"
+        ixz="1.13065220537512E-06"
+        iyy="0.000213352214088028"
+        iyz="4.22832429311092E-12"
+        izz="0.000112442329461823" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/laser_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://Ass-model/meshes/laser_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0.252 0 0.1492" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="laser_Link" />
+    <axis xyz="0 0 1" />
+  </joint>
+</robot>

@@ -1,0 +1,65 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"laser_Link" [label="laser_Link"];
+"torso_Link" [label="torso_Link"];
+"left_shoulder_1_Link" [label="left_shoulder_1_Link"];
+"left_shoulder_2_Link" [label="left_shoulder_2_Link"];
+"left_elbow_Link" [label="left_elbow_Link"];
+"left_wrist_1_Link" [label="left_wrist_1_Link"];
+"left_wrist_2_Link" [label="left_wrist_2_Link"];
+"left_wrist_3_Link" [label="left_wrist_3_Link"];
+"left_gripper_fixed_Link" [label="left_gripper_fixed_Link"];
+"left_gripper_Link" [label="left_gripper_Link"];
+"pan_Link" [label="pan_Link"];
+"tilt_Link" [label="tilt_Link"];
+"right_shoulder_1_Link" [label="right_shoulder_1_Link"];
+"right_shoulder_2_Link" [label="right_shoulder_2_Link"];
+"right_elbow_Link" [label="right_elbow_Link"];
+"right_wrist_1_Link" [label="right_wrist_1_Link"];
+"right_wrist_2_Link" [label="right_wrist_2_Link"];
+"right_wrist_3_Link" [label="right_wrist_3_Link"];
+"right_gripper_fixed_Link" [label="right_gripper_fixed_Link"];
+"right_gripper_Link" [label="right_gripper_Link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "laser_joint" [label="xyz: 0.252 0 0.1492 \nrpy: 0 -0 0"]
+"laser_joint" -> "laser_Link"
+"base_link" -> "torso_joint" [label="xyz: 0.075 0 0.5342 \nrpy: -1.2246e-16 -1.2246e-16 -4.1633e-17"]
+"torso_joint" -> "torso_Link"
+"torso_Link" -> "left_shoulder_1_joint" [label="xyz: -0.025 0.0858 0.485 \nrpy: 5.593e-17 3.6739e-16 -8.1621e-17"]
+"left_shoulder_1_joint" -> "left_shoulder_1_Link"
+"left_shoulder_1_Link" -> "left_shoulder_2_joint" [label="xyz: 0.065 0.08952 0 \nrpy: 6.6534e-17 -2.4493e-16 1.2325e-16"]
+"left_shoulder_2_joint" -> "left_shoulder_2_Link"
+"left_shoulder_2_Link" -> "left_elbow_joint" [label="xyz: 0.278 0 0 \nrpy: 1.3878e-16 -1.1102e-16 0"]
+"left_elbow_joint" -> "left_elbow_Link"
+"left_elbow_Link" -> "left_wrist_1_joint" [label="xyz: 0.23436 -0.03 0 \nrpy: -2.7756e-16 2.4652e-32 -2.3111e-32"]
+"left_wrist_1_joint" -> "left_wrist_1_Link"
+"left_wrist_1_Link" -> "left_wrist_2_joint" [label="xyz: 0.0267 0.027 0 \nrpy: -2.6732e-32 2.2204e-16 2.0331e-16"]
+"left_wrist_2_joint" -> "left_wrist_2_Link"
+"left_wrist_2_Link" -> "left_wrist_3_joint" [label="xyz: 0.0335 -0.027 0 \nrpy: 1.5648e-31 1.2246e-16 6.0767e-16"]
+"left_wrist_3_joint" -> "left_wrist_3_Link"
+"left_wrist_3_Link" -> "left_gripper_fixed_joint" [label="xyz: 0.02 0.015 0.004 \nrpy: 7.8612e-33 -0 0"]
+"left_gripper_fixed_joint" -> "left_gripper_fixed_Link"
+"left_wrist_3_Link" -> "left_gripper_joint" [label="xyz: 0.02 0.015 0.004 \nrpy: 7.8612e-33 -0 0"]
+"left_gripper_joint" -> "left_gripper_Link"
+"torso_Link" -> "pan_joint" [label="xyz: 0.0094995 0 0.6335 \nrpy: 1.2246e-16 1.2246e-16 4.1633e-17"]
+"pan_joint" -> "pan_Link"
+"pan_Link" -> "tilt_joint" [label="xyz: 0 0.0945 0.054 \nrpy: 3.6679e-16 3.5863e-33 -9.7775e-18"]
+"tilt_joint" -> "tilt_Link"
+"torso_Link" -> "right_shoulder_1_joint" [label="xyz: -0.025 -0.0828 0.485 \nrpy: 5.9764e-17 1.2246e-16 1.0433e-16"]
+"right_shoulder_1_joint" -> "right_shoulder_1_Link"
+"right_shoulder_1_Link" -> "right_shoulder_2_joint" [label="xyz: 0.065 -0.08952 0 \nrpy: 6.2701e-17 -0 -6.2701e-17"]
+"right_shoulder_2_joint" -> "right_shoulder_2_Link"
+"right_shoulder_2_Link" -> "right_elbow_joint" [label="xyz: 0.278 0 0 \nrpy: -1.6008e-15 -1.2246e-16 1.6653e-16"]
+"right_elbow_joint" -> "right_elbow_Link"
+"right_elbow_Link" -> "right_wrist_1_joint" [label="xyz: 0.23436 0.03 0 \nrpy: 1.6008e-15 1.309e-29 -1.6653e-16"]
+"right_wrist_1_joint" -> "right_wrist_1_Link"
+"right_wrist_1_Link" -> "right_wrist_2_joint" [label="xyz: 0.0267 -0.027 0 \nrpy: -3.7954e-16 3.5006e-30 -4.9485e-16"]
+"right_wrist_2_joint" -> "right_wrist_2_Link"
+"right_wrist_2_Link" -> "right_wrist_3_joint" [label="xyz: 0.0335 0.027 0 \nrpy: 4.647e-17 1.2011e-16 7.3949e-16"]
+"right_wrist_3_joint" -> "right_wrist_3_Link"
+"right_wrist_3_Link" -> "right_gripper_fixed_joint" [label="xyz: 0.02 0.015 0.004 \nrpy: 5.7683e-34 -0 0"]
+"right_gripper_fixed_joint" -> "right_gripper_fixed_Link"
+"right_wrist_3_Link" -> "right_gripper_joint" [label="xyz: 0.02 0.015 0.004 \nrpy: 5.7683e-34 -0 0"]
+"right_gripper_joint" -> "right_gripper_Link"
+}
