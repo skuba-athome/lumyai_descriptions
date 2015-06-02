@@ -1,9 +1,13 @@
 <launch>
   <arg name="model" />
-  <arg name="gui" default="False" />
+  <arg name="gui" default="true" />
   <param name="robot_description" textfile="$(find lumyai_descriptions)/robots/lumyai_neli.URDF" />
   <param name="use_gui" value="$(arg gui)" />
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="$(arg gui)" />
+  </node>
+
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lumyai_descriptions)/rviz/urdf.rviz" />
 </launch>
