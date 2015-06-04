@@ -752,4 +752,13 @@
     <child link="laser_Link" />
     <axis xyz="0 0 1" />
   </joint>
+
+  <link name="camera_link"/>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.02832 -0.0606 0.04405" rpy="0 0 0" />
+    <parent link="tilt_Link" />
+    <child link="camera_link" />
+    <axis xyz="0 0 1" />
+  </joint>
 </robot>
