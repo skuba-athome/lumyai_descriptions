@@ -319,11 +319,12 @@
   </link>
   <joint
     name="right_wrist_2_joint"
-    type="continuous">
+    type="revolute">
     <origin xyz="0.0267 -0.027 0" rpy="-3.7954E-16 3.5006E-30 -4.9485E-16" />
     <parent link="right_wrist_1_Link" />
     <child link="right_wrist_2_Link" />
     <axis xyz="0 1 0" />
+    <limit lower="-0.47" upper="1.57" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_3_Link">
@@ -355,11 +356,12 @@
     </collision>
   </link>
   
-  <joint name="right_wrist_3_joint" type="continuous">
+  <joint name="right_wrist_3_joint" type="revolute">
     <origin xyz="0.0335 0.027 0" rpy="4.647E-17 1.2011E-16 7.3949E-16" />
     <parent link="right_wrist_2_Link" />
     <child link="right_wrist_3_Link" />
     <axis xyz="1 0 0" />
+    <limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_gripper_Link">
