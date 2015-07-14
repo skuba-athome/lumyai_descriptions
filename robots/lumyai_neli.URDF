@@ -249,7 +249,7 @@
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
     <axis xyz="0 -1 0" />
-    <limit lower="-1.7" upper="1.0" effort="30" velocity="0.4" />
+    <limit lower="-1.7" upper="0.2" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_1_Link">
@@ -323,7 +323,7 @@
     <parent link="right_wrist_1_Link" />
     <child link="right_wrist_2_Link" />
     <axis xyz="0 1 0" />
-    <limit lower="-0.5" upper="1.45" effort="30" velocity="0.4" />
+    <limit lower="-1.40" upper="1.45" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_3_Link">
@@ -468,7 +468,7 @@
     <origin xyz="-0.025 0.0858 0.485" rpy="5.593E-17 1.57075 -8.1621E-17" />
     <parent link="torso_Link" />
     <child link="left_shoulder_1_Link" />
-    <axis xyz="0 1 0" />
+    <axis xyz="0 -1 0" />
   </joint>
   
   <link name="left_shoulder_2_Link">
@@ -504,7 +504,7 @@
     <origin xyz="0.065 0.08952 0" rpy="6.6534E-17 -2.4493E-16 1.2325E-16" />
     <parent link="left_shoulder_1_Link" />
     <child link="left_shoulder_2_Link" />
-    <axis xyz="1 0 0" />
+    <axis xyz="-1 0 0" />
   </joint>
   
   <link name="left_elbow_Link">
