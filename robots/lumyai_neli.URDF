@@ -175,7 +175,7 @@
     <parent link="torso_Link" />
     <child link="right_shoulder_1_Link" />
     <axis xyz="0 1 0" />
-    <limit lower="-1.82" upper="0.59" effort="30" velocity="0.4" />
+    <limit lower="-1.2" upper="0.5" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_shoulder_2_Link">
@@ -212,7 +212,7 @@
     <parent link="right_shoulder_1_Link" />
     <child link="right_shoulder_2_Link" />
     <axis xyz="-1 0 0" />
-    <limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />
+    <limit lower="-1.47" upper="1.1" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_elbow_Link">
@@ -249,7 +249,7 @@
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
     <axis xyz="0 -1 0" />
-    <limit lower="-1.7" upper="0.2" effort="30" velocity="0.4" />
+    <limit lower="-1.0" upper="0.22" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_1_Link">
@@ -286,7 +286,7 @@
     <parent link="right_elbow_Link" />
     <child link="right_wrist_1_Link" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.7" upper="3.04" effort="30" velocity="0.4" />
+    <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_2_Link">
@@ -323,7 +323,7 @@
     <parent link="right_wrist_1_Link" />
     <child link="right_wrist_2_Link" />
     <axis xyz="0 1 0" />
-    <limit lower="-0.5" upper="1.60" effort="30" velocity="0.4" />
+    <limit lower="-0.6" upper="1.5" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_3_Link">
@@ -360,7 +360,7 @@
     <parent link="right_wrist_2_Link" />
     <child link="right_wrist_3_Link" />
     <axis xyz="1 0 0" />
-    <limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />
+    <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_gripper_Link">
@@ -396,7 +396,7 @@
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_Link" />
     <axis xyz="0 0 1" />
-    <limit lower="-0.74" upper="0.0" effort="30" velocity="0.4" />
+    <limit lower="-0.8" upper="1.1" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_gripper_fixed_Link">
