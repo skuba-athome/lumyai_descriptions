@@ -174,8 +174,8 @@
     <origin xyz="-0.025 -0.0828 0.485" rpy="5.9764E-17 1.57075 1.0433E-16" />
     <parent link="torso_Link" />
     <child link="right_shoulder_1_Link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-1.2" upper="0.5" effort="30" velocity="0.4" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-0.3" upper="1.3" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_shoulder_2_Link">
@@ -211,8 +211,8 @@
     <origin xyz="0.065 -0.08952 0" rpy="6.2701E-17 4.9423E-62 -6.2701E-17" />
     <parent link="right_shoulder_1_Link" />
     <child link="right_shoulder_2_Link" />
-    <axis xyz="-1 0 0" />
-    <limit lower="-1.47" upper="1.1" effort="30" velocity="0.4" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.8" upper="1.6" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_elbow_Link">
@@ -248,7 +248,7 @@
     <origin xyz="0.278 0 0" rpy="-1.6008E-15 -1.57075 1.6653E-16" />
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
-    <axis xyz="0 -1 0" />
+    <axis xyz="0 1 0" />
     <limit lower="-1.0" upper="0.22" effort="30" velocity="0.4" />
   </joint>
   
@@ -396,7 +396,7 @@
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_Link" />
     <axis xyz="0 0 1" />
-    <limit lower="-0.8" upper="1.1" effort="30" velocity="0.4" />
+    <limit lower="-0.8" upper="0.2" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_gripper_fixed_Link">
@@ -428,11 +428,12 @@
     </collision>
   </link>
   
-  <joint name="right_gripper_fixed_joint" type="fixed">
+  <joint name="right_gripper_fixed_joint" type="revolute">
     <origin xyz="0.02 0.015 0.004" rpy="5.7683E-34 0 0" />
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_fixed_Link" />
     <axis xyz="0 0 1" />
+    <limit lower="-0.8" upper="0.2" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_shoulder_1_Link">
@@ -464,11 +465,12 @@
     </collision>
   </link>
   
-  <joint name="left_shoulder_1_joint" type="continuous">
+  <joint name="left_shoulder_1_joint" type="revolute">
     <origin xyz="-0.025 0.0858 0.485" rpy="5.593E-17 1.57075 -8.1621E-17" />
     <parent link="torso_Link" />
     <child link="left_shoulder_1_Link" />
-    <axis xyz="0 -1 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.2" upper="0.589" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_shoulder_2_Link">
@@ -500,11 +502,12 @@
     </collision>
   </link>
   
-  <joint name="left_shoulder_2_joint" type="continuous">
+  <joint name="left_shoulder_2_joint" type="revolute">
     <origin xyz="0.065 0.08952 0" rpy="6.6534E-17 -2.4493E-16 1.2325E-16" />
     <parent link="left_shoulder_1_Link" />
     <child link="left_shoulder_2_Link" />
     <axis xyz="-1 0 0" />
+    <limit lower="-1.5" upper="1.0" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_elbow_Link">
@@ -535,11 +538,12 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_elbow_joint" type="continuous">
+  <joint name="left_elbow_joint" type="revolute">
     <origin xyz="0.278 0 0" rpy="1.3878E-16 -1.57075 0" />
     <parent link="left_shoulder_2_Link" />
     <child link="left_elbow_Link" />
     <axis xyz="0 1 0" />
+    <limit lower="-0.889" upper="0.17" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_wrist_1_Link">
@@ -576,7 +580,8 @@
     <parent link="left_elbow_Link" />
     <child link="left_wrist_1_Link" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.7" upper="3.04" effort="30" velocity="0.4" />
+    <!-- old <limit lower="-0.7" upper="3.04" effort="30" velocity="0.4" />-->
+    <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_wrist_2_Link">
@@ -612,7 +617,7 @@
     <parent link="left_wrist_1_Link" />
     <child link="left_wrist_2_Link" />
     <axis xyz="0 1 0" />
-    <limit lower="-0.6" upper="1.60" effort="30" velocity="0.4" />
+    <limit lower="-0.6" upper="1.50" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_wrist_3_Link">
@@ -649,7 +654,8 @@
     <parent link="left_wrist_2_Link" />
     <child link="left_wrist_3_Link" />
     <axis xyz="1 0 0" />
-    <limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />
+    <!--<limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />-->
+    <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
   
   <link name="left_gripper_Link">
@@ -771,7 +777,7 @@
 
   <link name="right_mani_link"/>
    <joint name="right_mani_joint" type="fixed">
-    <origin xyz="-0.025 -0.17 0.486" rpy="0 0 0" />
+    <origin xyz="-0.02 -0.17 0.8" rpy="0 0 0" />
     <parent link="torso_Link" />
     <child link="right_mani_link" />
     <axis xyz="0 0 1" />
@@ -779,7 +785,7 @@
 
   <link name="left_mani_link"/>
   <joint name="left_mani_joint" type="fixed">
-    <origin xyz="-0.025 0.17 0.486" rpy="0 0 0" />
+    <origin xyz="-0.02 0.17 0.8" rpy="0 0 0" />
     <parent link="torso_Link" />
     <child link="left_mani_link" />
     <axis xyz="0 0 1" />
