@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "lumyai_descriptions")
+set(lumyai_descriptions_MAINTAINER "MoveIt Setup Assistant <assistant@moveit.ros.org>")
+set(lumyai_descriptions_DEPRECATED "")
+set(lumyai_descriptions_VERSION "0.2.0")
+set(lumyai_descriptions_BUILD_DEPENDS )
+set(lumyai_descriptions_RUN_DEPENDS "moveit_ros_move_group" "moveit_planners_ompl" "moveit_ros_visualization" "joint_state_publisher" "robot_state_publisher" "xacro" "gazebo")
+set(lumyai_descriptions_BUILDTOOL_DEPENDS "catkin")
