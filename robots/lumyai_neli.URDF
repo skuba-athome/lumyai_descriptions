@@ -249,7 +249,7 @@
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
     <axis xyz="0 1 0" />
-    <limit lower="-1.0" upper="0.22" effort="30" velocity="0.4" />
+    <limit lower="-0.3" upper="1.0" effort="30" velocity="0.4" />
   </joint>
   
   <link name="right_wrist_1_Link">

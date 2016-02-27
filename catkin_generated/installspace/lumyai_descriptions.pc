@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: lumyai_descriptions
+Description: Description of lumyai_descriptions
+Version: 0.2.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 
