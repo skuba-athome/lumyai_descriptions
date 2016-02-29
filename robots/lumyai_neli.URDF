@@ -41,7 +41,7 @@
         izz="0.00687526558226967" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" /> 
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://lumyai_descriptions/meshes/ballscrew_Link.STL" />
       </geometry>
@@ -174,8 +174,8 @@
     <origin xyz="-0.025 -0.0828 0.485" rpy="5.9764E-17 1.57075 1.0433E-16" />
     <parent link="torso_Link" />
     <child link="right_shoulder_1_Link" />
-    <axis xyz="0 -1 0" />
-    <limit lower="-0.3" upper="1.3" effort="30" velocity="0.4" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.2" upper="0.5" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_shoulder_2_Link">
@@ -211,8 +211,8 @@
     <origin xyz="0.065 -0.08952 0" rpy="6.2701E-17 4.9423E-62 -6.2701E-17" />
     <parent link="right_shoulder_1_Link" />
     <child link="right_shoulder_2_Link" />
-    <axis xyz="1 0 0" />
-    <limit lower="-0.8" upper="1.6" effort="30" velocity="0.4" />
+    <axis xyz="-1 0 0" />
+    <limit lower="-1.47" upper="1.1" effort="30" velocity="0.4" />
   </joint>
 
   <link name="right_elbow_Link">
@@ -248,10 +248,10 @@
     <origin xyz="0.278 0 0" rpy="-1.6008E-15 -1.57075 1.6653E-16" />
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
-    <axis xyz="0 1 0" />
-    <limit lower="-0.3" upper="1.0" effort="30" velocity="0.4" />
+    <axis xyz="0 -1 0" />
+    <limit lower="-1.0" upper="0.22" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="right_wrist_1_Link">
     <inertial>
       <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
@@ -280,7 +280,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="right_wrist_1_joint" type="revolute">
     <origin xyz="0.23436 0.03 0" rpy="1.6008E-15 1.309E-29 -1.6653E-16" />
     <parent link="right_elbow_Link" />
@@ -288,7 +288,7 @@
     <axis xyz="1 0 0" />
     <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="right_wrist_2_Link">
     <inertial>
       <origin xyz="0.00847810994802878 0.0269999999999982 -2.22044604925031E-16" rpy="0 0 0" />
@@ -325,7 +325,7 @@
     <axis xyz="0 1 0" />
     <limit lower="-0.6" upper="1.5" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="right_wrist_3_Link">
     <inertial>
       <origin xyz="0.0186417965193608 2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
@@ -354,7 +354,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="right_wrist_3_joint" type="revolute">
     <origin xyz="0.0335 0.027 0" rpy="4.647E-17 1.2011E-16 7.3949E-16" />
     <parent link="right_wrist_2_Link" />
@@ -362,7 +362,7 @@
     <axis xyz="1 0 0" />
     <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="right_gripper_Link">
     <inertial>
       <origin xyz="0.0428340981345857 0.0302658123758087 -0.004" rpy="0 0 0" />
@@ -396,9 +396,9 @@
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_Link" />
     <axis xyz="0 0 1" />
-    <limit lower="-0.8" upper="0.2" effort="30" velocity="0.4" />
+    <limit lower="0.0" upper="0.8" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="right_gripper_fixed_Link">
     <inertial>
       <origin xyz="0.0434341825098 -0.0593981487763494 -0.004" rpy="0 0 0" />
@@ -427,7 +427,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="right_gripper_fixed_joint" type="revolute">
     <origin xyz="0.02 0.015 0.004" rpy="5.7683E-34 0 0" />
     <parent link="right_wrist_3_Link" />
@@ -435,7 +435,7 @@
     <axis xyz="0 0 1" />
     <limit lower="-0.8" upper="0.2" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_shoulder_1_Link">
     <inertial>
       <origin xyz="0.0239992426752437 0.0583974811506782 -2.22044604925031E-16" rpy="0 0 0" />
@@ -464,7 +464,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_shoulder_1_joint" type="revolute">
     <origin xyz="-0.025 0.0858 0.485" rpy="5.593E-17 1.57075 -8.1621E-17" />
     <parent link="torso_Link" />
@@ -472,7 +472,7 @@
     <axis xyz="0 1 0" />
     <limit lower="-1.2" upper="0.589" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_shoulder_2_Link">
     <inertial>
       <origin xyz="0.159020988900685 0 0" rpy="0 0 0" />
@@ -501,7 +501,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_shoulder_2_joint" type="revolute">
     <origin xyz="0.065 0.08952 0" rpy="6.6534E-17 -2.4493E-16 1.2325E-16" />
     <parent link="left_shoulder_1_Link" />
@@ -509,7 +509,7 @@
     <axis xyz="-1 0 0" />
     <limit lower="-1.5" upper="1.0" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_elbow_Link">
     <inertial>
       <origin xyz="0.122051716562903 -0.000820658493535464 -3.52135476333615E-09" rpy="0 0 0" />
@@ -545,7 +545,7 @@
     <axis xyz="0 1 0" />
     <limit lower="-0.889" upper="0.17" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_wrist_1_Link">
     <inertial>
       <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
@@ -574,7 +574,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_wrist_1_joint" type="revolute">
     <origin xyz="0.23436 -0.03 0" rpy="-2.7756E-16 2.4652E-32 -2.3111E-32" />
     <parent link="left_elbow_Link" />
@@ -583,7 +583,7 @@
     <!-- old <limit lower="-0.7" upper="3.04" effort="30" velocity="0.4" />-->
     <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_wrist_2_Link">
     <inertial>
       <origin xyz="0.0084781099480139 -0.0270000000000558 -6.66133814775094E-16" rpy="0 0 0" />
@@ -619,7 +619,7 @@
     <axis xyz="0 1 0" />
     <limit lower="-0.6" upper="1.50" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_wrist_3_Link">
     <inertial>
       <origin xyz="0.0186417965193607 -2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
@@ -648,7 +648,7 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_wrist_3_joint" type="revolute">
     <origin xyz="0.0335 -0.027 0" rpy="1.5648E-31 1.2246E-16 6.0767E-16" />
     <parent link="left_wrist_2_Link" />
@@ -657,7 +657,7 @@
     <!--<limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />-->
     <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
-  
+
   <link name="left_gripper_Link">
     <inertial>
       <origin xyz="0.043136321949884 -0.0598334894105086 -0.004" rpy="0 0 0" />
@@ -686,14 +686,14 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_gripper_joint" type="continuous">
     <origin xyz="0.02 0.015 0.004" rpy="7.8612E-33 0 0" />
     <parent link="left_wrist_3_Link" />
     <child link="left_gripper_Link" />
     <axis xyz="0 0 1" />
   </joint>
-  
+
   <link name="left_gripper_fixed_Link">
     <inertial>
       <origin xyz="0.0431363219499079 0.0298334894104741 -0.004" rpy="0 0 0" />
@@ -722,14 +722,14 @@
       </geometry>
     </collision>
   </link>
-  
+
   <joint name="left_gripper_fixed_joint" type="fixed">
     <origin xyz="0.02 0.015 0.004" rpy="7.8612E-33 0 0" />
     <parent link="left_wrist_3_Link" />
     <child link="left_gripper_fixed_Link" />
     <axis xyz="0 0 1" />
   </joint>
-  
+
   <link name="laser_Link">
     <inertial>
       <origin xyz="-0.000643832581142478 9.32775516960576E-10 0.0378322387460577" rpy="0 0 0" />
