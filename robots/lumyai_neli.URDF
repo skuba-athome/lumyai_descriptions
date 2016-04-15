@@ -2,7 +2,7 @@
   <link name="base_link">
     <inertial>
       <origin xyz="0.000356537786255296 -6.6249418627309E-17 0.0997888259449414" rpy="0 0 0" />
-      <mass value="22.8330889899799" />
+      <mass value="42.8330889899799" />
       <inertia
         ixx="0.393056901892828"
         ixy="1.36347370720269E-09"
@@ -31,7 +31,7 @@
   <link name="torso_Link">
     <inertial>
       <origin xyz="-0.0178492334695928 1.64680041842964E-05 0.42269777566101" rpy="0 0 0" />
-      <mass value="2.69155190066383" />
+      <mass value="0.001" />
       <inertia
         ixx="0.0469156503531629"
         ixy="-3.16954065000709E-07"
@@ -73,7 +73,7 @@
   <link name="pan_Link">
     <inertial>
       <origin xyz="0 -0.00119126756458552 0.0134576748385669" rpy="0 0 0" />
-      <mass value="0.0300690193079437" />
+      <mass value="0.001" />
       <inertia
         ixx="0.000168368080790157"
         ixy="-4.80909958181406E-20"
@@ -110,7 +110,7 @@
   <link name="tilt_Link">
     <inertial>
       <origin xyz="-8.44827095813905E-06 -0.0945031871194096 0.0320993885960499" rpy="0 0 0" />
-      <mass value="0.833552168165174" />
+      <mass value="0.001" />
       <inertia
         ixx="0.00381358557342371"
         ixy="4.54342919190634E-07"
@@ -147,7 +147,7 @@
   <link name="right_shoulder_1_Link">
     <inertial>
       <origin xyz="0.0239992426752438 -0.0583974811506786 -2.22044604925031E-16" rpy="0 0 0" />
-      <mass value="0.489568995899366" />
+      <mass value="0.001" />
       <inertia
         ixx="0.000553543383353331"
         ixy="-7.80079861482034E-05"
@@ -185,7 +185,7 @@
   <link name="right_shoulder_2_Link">
     <inertial>
       <origin xyz="0.159020988900685 -2.77555756156289E-17 0" rpy="0 0 0" />
-      <mass value="0.232391134105839" />
+      <mass value="0.001" />
       <inertia
         ixx="5.22472538303865E-05"
         ixy="2.52122559280678E-21"
@@ -223,7 +223,7 @@
   <link name="right_elbow_Link">
     <inertial>
       <origin xyz="0.122051716562919 0.000820658493516618 3.52135320902391E-09" rpy="0 0 0" />
-      <mass value="0.166643682967829" />
+      <mass value="0.001" />
       <inertia
         ixx="2.28800565451064E-05"
         ixy="1.49492951235107E-05"
@@ -261,7 +261,7 @@
   <link name="right_wrist_1_Link">
     <inertial>
       <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
-      <mass value="0.0149816280592893" />
+      <mass value="0.001" />
       <inertia
         ixx="8.84904578599191E-06"
         ixy="1.39288755525688E-21"
@@ -299,7 +299,7 @@
   <link name="right_wrist_2_Link">
     <inertial>
       <origin xyz="0.00847810994802878 0.0269999999999982 -2.22044604925031E-16" rpy="0 0 0" />
-      <mass value="0.0641453083227973" />
+      <mass value="0.001" />
       <inertia
         ixx="1.6788504342063E-05"
         ixy="-5.9756481874188E-21"
@@ -337,7 +337,7 @@
   <link name="right_wrist_3_Link">
     <inertial>
       <origin xyz="0.0186417965193608 2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
-      <mass value="0.0557526551260179" />
+      <mass value="0.001" />
       <inertia
         ixx="2.4548698493395E-05"
         ixy="2.6975485784349E-20"
@@ -375,7 +375,7 @@
   <link name="right_gripper_Link">
     <inertial>
       <origin xyz="0.0428340981345857 0.0302658123758087 -0.004" rpy="0 0 0" />
-      <mass value="0.0226554217932752" />
+      <mass value="0.001" />
       <inertia
         ixx="8.71789031389235E-06"
         ixy="1.34146946089381E-05"
@@ -412,7 +412,7 @@
   <link name="right_gripper_fixed_Link">
     <inertial>
       <origin xyz="0.0434341825098 -0.0593981487763494 -0.004" rpy="0 0 0" />
-      <mass value="0.0226554217932752" />
+      <mass value="0.001" />
       <inertia
         ixx="8.18861723555839E-06"
         ixy="-1.28943839692323E-05"
@@ -448,7 +448,7 @@
   <link name="left_shoulder_1_Link">
     <inertial>
       <origin xyz="0.0239992426752437 0.0583974811506782 -2.22044604925031E-16" rpy="0 0 0" />
-      <mass value="0.489568995899366" />
+      <mass value="0.001" />
       <inertia
         ixx="0.000553543383353331"
         ixy="7.80079861482035E-05"
@@ -486,7 +486,7 @@
   <link name="left_shoulder_2_Link">
     <inertial>
       <origin xyz="0.159020988900685 0 0" rpy="0 0 0" />
-      <mass value="0.232391134105839" />
+      <mass value="0.001" />
       <inertia
         ixx="5.22472538303864E-05"
         ixy="9.395660615452E-21"
@@ -524,7 +524,7 @@
   <link name="left_elbow_Link">
     <inertial>
       <origin xyz="0.122051716562903 -0.000820658493535464 -3.52135476333615E-09" rpy="0 0 0" />
-      <mass value="0.166643682967829" />
+      <mass value="0.001" />
       <inertia
         ixx="2.28800565451064E-05"
         ixy="-1.49492951235107E-05"
@@ -561,7 +561,7 @@
   <link name="left_wrist_1_Link">
     <inertial>
       <origin xyz="0.00848806817016701 0 0" rpy="0 0 0" />
-      <mass value="0.0149816280592893" />
+      <mass value="0.001" />
       <inertia
         ixx="8.84904578599191E-06"
         ixy="-1.00486934894722E-21"
@@ -600,7 +600,7 @@
   <link name="left_wrist_2_Link">
     <inertial>
       <origin xyz="0.0084781099480139 -0.0270000000000558 -6.66133814775094E-16" rpy="0 0 0" />
-      <mass value="0.0641453083227973" />
+      <mass value="0.001" />
       <inertia
         ixx="1.6788504342063E-05"
         ixy="5.94543201326671E-21"
@@ -637,7 +637,7 @@
   <link name="left_wrist_3_Link">
     <inertial>
       <origin xyz="0.0186417965193607 -2.77555756156289E-17 2.22044604925031E-16" rpy="0 0 0" />
-      <mass value="0.0557526551260178" />
+      <mass value="0.001" />
       <inertia
         ixx="2.4548698493395E-05"
         ixy="1.37246533420391E-20"
@@ -676,7 +676,7 @@
   <link name="left_gripper_Link">
     <inertial>
       <origin xyz="0.043136321949884 -0.0598334894105086 -0.004" rpy="0 0 0" />
-      <mass value="0.0226554217932752" />
+      <mass value="0.001" />
       <inertia
         ixx="8.45063720118698E-06"
         ixy="-1.31572009335656E-05"
@@ -713,7 +713,7 @@
   <link name="left_gripper_fixed_Link">
     <inertial>
       <origin xyz="0.0431363219499079 0.0298334894104741 -0.004" rpy="0 0 0" />
-      <mass value="0.0226554217932752" />
+      <mass value="0.001" />
       <inertia
         ixx="8.45063720116595E-06"
         ixy="1.3157200933545E-05"
@@ -749,7 +749,7 @@
   <link name="laser_Link">
     <inertial>
       <origin xyz="-0.000643832581142478 9.32775516960576E-10 0.0378322387460577" rpy="0 0 0" />
-      <mass value="0.229160254925421" />
+      <mass value="0.001" />
       <inertia
         ixx="0.000208944146839268"
         ixy="-1.03293676040432E-12"
