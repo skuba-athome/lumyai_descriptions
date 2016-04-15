@@ -67,6 +67,7 @@
       upper="0"
       effort="0"
       velocity="0" />
+    <dynamics damping="0.1"/>
   </joint>
 
   <link name="pan_Link">
@@ -103,6 +104,7 @@
     <parent link="torso_Link" />
     <child link="pan_Link" />
     <axis xyz="0 0 1" />
+    <dynamics damping="0.1"/>
   </joint>
 
   <link name="tilt_Link">
@@ -139,6 +141,7 @@
     <parent link="pan_Link" />
     <child link="tilt_Link" />
     <axis xyz="0 -1 0" />
+    <dynamics damping="0.1"/>
   </joint>
 
   <link name="right_shoulder_1_Link">
@@ -175,6 +178,7 @@
     <parent link="torso_Link" />
     <child link="right_shoulder_1_Link" />
     <axis xyz="0 1 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-1.5" upper="0.4" effort="30" velocity="0.4" />
   </joint>
 
@@ -212,6 +216,7 @@
     <parent link="right_shoulder_1_Link" />
     <child link="right_shoulder_2_Link" />
     <axis xyz="-1 0 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-1.47" upper="1.1" effort="30" velocity="0.4" />
   </joint>
 
@@ -249,6 +254,7 @@
     <parent link="right_shoulder_2_Link" />
     <child link="right_elbow_Link" />
     <axis xyz="0 -1 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-1.5" upper="0.22" effort="30" velocity="0.4" />
   </joint>
 
@@ -286,6 +292,7 @@
     <parent link="right_elbow_Link" />
     <child link="right_wrist_1_Link" />
     <axis xyz="1 0 0" />
+    <dynamics damping="0.01"/>
     <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
 
@@ -323,6 +330,7 @@
     <parent link="right_wrist_1_Link" />
     <child link="right_wrist_2_Link" />
     <axis xyz="0 1 0" />
+    <dynamics damping="0.01"/>
     <limit lower="-0.6" upper="1.5" effort="30" velocity="0.4" />
   </joint>
 
@@ -360,6 +368,7 @@
     <parent link="right_wrist_2_Link" />
     <child link="right_wrist_3_Link" />
     <axis xyz="1 0 0" />
+    <dynamics damping="0.01"/>
     <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
 
@@ -396,6 +405,7 @@
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_Link" />
     <axis xyz="0 0 1" />
+    <dynamics damping="0.01"/>
     <limit lower="0.0" upper="0.8" effort="30" velocity="0.4" />
   </joint>
 
@@ -428,12 +438,11 @@
     </collision>
   </link>
 
-  <joint name="right_gripper_fixed_joint" type="revolute">
+  <joint name="right_gripper_fixed_joint" type="fixed">
     <origin xyz="0.02 0.015 0.004" rpy="5.7683E-34 0 0" />
     <parent link="right_wrist_3_Link" />
     <child link="right_gripper_fixed_Link" />
     <axis xyz="0 0 1" />
-    <limit lower="-0.8" upper="0.2" effort="30" velocity="0.4" />
   </joint>
 
   <link name="left_shoulder_1_Link">
@@ -470,6 +479,7 @@
     <parent link="torso_Link" />
     <child link="left_shoulder_1_Link" />
     <axis xyz="0 1 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-1.2" upper="0.589" effort="30" velocity="0.4" />
   </joint>
 
@@ -507,6 +517,7 @@
     <parent link="left_shoulder_1_Link" />
     <child link="left_shoulder_2_Link" />
     <axis xyz="-1 0 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-1.5" upper="1.0" effort="30" velocity="0.4" />
   </joint>
 
@@ -543,6 +554,7 @@
     <parent link="left_shoulder_2_Link" />
     <child link="left_elbow_Link" />
     <axis xyz="0 1 0" />
+    <dynamics damping="0.1"/>
     <limit lower="-0.889" upper="0.17" effort="30" velocity="0.4" />
   </joint>
 
@@ -580,6 +592,7 @@
     <parent link="left_elbow_Link" />
     <child link="left_wrist_1_Link" />
     <axis xyz="1 0 0" />
+    <dynamics damping="0.01"/>
     <!-- old <limit lower="-0.7" upper="3.04" effort="30" velocity="0.4" />-->
     <limit lower="-3.1" upper="2.5" effort="30" velocity="0.4" />
   </joint>
@@ -617,6 +630,7 @@
     <parent link="left_wrist_1_Link" />
     <child link="left_wrist_2_Link" />
     <axis xyz="0 1 0" />
+    <dynamics damping="0.01"/>
     <limit lower="-0.6" upper="1.50" effort="30" velocity="0.4" />
   </joint>
 
@@ -654,6 +668,7 @@
     <parent link="left_wrist_2_Link" />
     <child link="left_wrist_3_Link" />
     <axis xyz="1 0 0" />
+    <dynamics damping="0.01"/>
     <!--<limit lower="-1.57" upper="1.57" effort="30" velocity="0.4" />-->
     <limit lower="-2.64" upper="3.17" effort="30" velocity="0.4" />
   </joint>
@@ -692,6 +707,7 @@
     <parent link="left_wrist_3_Link" />
     <child link="left_gripper_Link" />
     <axis xyz="0 0 1" />
+    <dynamics damping="0.01"/>
   </joint>
 
   <link name="left_gripper_fixed_Link">
