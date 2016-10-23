@@ -785,12 +785,12 @@
 
   <link name="imu_link"/>
   <joint name="imu_joint" type="fixed">
-    <origin xyz="0.122 -0.015 0.1492" rpy="3.1416 0 0" />
+    <origin xyz="0.122 -0.000 0.1492" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="imu_link" />
     <axis xyz="0 0 1" />
   </joint>
-  
+  <!--
   <link name="base_footprint"/>
   <joint name="base_footprint_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -798,7 +798,7 @@
     <child link="base_footprint" />
     <axis xyz="0 0 1" />
   </joint>
-
+  -->
   <!-- Additional Link -->
   <link name="camera_link"/>
   <joint name="camera_joint" type="fixed">
